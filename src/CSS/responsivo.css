@@ -80,7 +80,36 @@
     .projetos{
         padding: 30px;
     }
-    .carousel .nav {
-        gap: 680px;
+}
+
+@media (min-width: 1280px) {
+    .home{
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 1920px) {
+    .cabecalho {
+        padding: 30px;
+    }
+
+    .home {
+        flex-direction: row;
+        align-items: center;
+        margin: 40px 0;
+        gap: 20px;
+    }
+
+    .home .informacoes {
+        max-width: 90%; 
+        text-align: left; /* Alinhamento à esquerda para telas maiores */
+    }
+
+    .projetos .container-projetos {
+        padding: 0 50px; /* Aumenta o padding lateral */
+    }
+
+    .projetos {
+        padding: 40px; /* Aumenta o padding geral */
     }
 }
