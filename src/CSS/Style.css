@@ -1,14 +1,15 @@
 html {
     color: #fff;
     scroll-behavior: smooth;
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=47921);
 }
 
 body {
-    background: linear-gradient(150deg, #000, #000dc6);
-    background-size: 100%, 100%;
+    background: linear-gradient(180deg, #000, #110000, #640000);
+    background-size: cover;
+    background-position: center;
     font-family: "Poppins", sans-serif;
     margin: 0 auto;
-    max-width: 1120px;
 }
 
 .cabecalho {
@@ -30,8 +31,9 @@ body {
 }
 
 .cabecalho a:hover .logo {
-    color: #0015ff;
-    border: 2px solid #434ad8;
+    color: #680000;
+    border: 2px solid #680000;
+    transform: scale(1.1);
 }
 
 .cabecalho .menu li a {
@@ -42,7 +44,7 @@ body {
 }
 
 .cabecalho .menu li a:hover {
-    background-color: #0016d7;
+    background-color: #680000;
     color: #fff;
     border-radius: 50px;
 }
@@ -63,52 +65,112 @@ body {
     max-width: 50%;
 }
 
-.home .informacoes h1 {
-    font-family: "Raleway", sans-serif;
-    font-size: 45px;
-    margin-bottom: 20px;
+.informacoes .info_animation {
+    font-size: 36px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    color: #fff;
 }
 
-.home .informacoes p {
-    font-family: "Raleway", sans-serif;
-    font-size: 24px;
-    margin-bottom: 10px;
+.info_animation span {
+    position: relative;
 }
 
-.home .redes-sociais {
-    display: flex;
-    gap: 20px;
+.info_animation span::before {
+    content: "";
+    color: #a10000;
+    animation: text_animation 20s infinite;
 }
 
-.home .redes-sociais a i {
-    border: 1px solid #fff; /* Removida a vírgula */
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    padding: 22px;
+.info_animation span::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 2px solid #a10000;
+    right: -10px;
+    animation: cursor 1s infinite, digitar 20s steps(15) infinite;
+    width: calc(100% + 15px);
+    background-color: #000;
+}
+
+@keyframes text_animation {
+    0%, 25% {
+        content: "sou Dracula, o rei dos vampiros";
+    }
+    26%, 50% {
+        content: "sou desenvolvedor FullStack";
+    }
+    51%, 75% {
+        content: "sou desenvolvedor web e desenvolvedor de jogos";
+    }
+    76%, 100% {
+        content: "tenho uma sede por conhecimento que é insaciável.";
+    }
+}
+
+@keyframes cursor {
+    0% {
+        border-left: 2px solid #000;
+    }
+}
+
+@keyframes digitar {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+        width: calc(100% + 15px);
+    }
+}
+
+.social .redes-sociais {
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.social .redes-sociais li a i {
+    padding: 15px;
+    border-radius: 35%;
+    border-spacing: 0;
+    box-sizing: border-box;
     text-align: center;
     font-size: 36px;
-    transition: 0.3s;
+    color: #fff;
+    box-shadow: 1px 1px 10px #000;
 }
 
-.home .redes-sociais a i:hover {
-    color: #0206e0;
-    box-shadow: rgba(0, 3, 41, 0.669);
-    border: 1px solid #ffffff48;
-    transform: scale(1.1);
-    transform-style: preserve-3d;
+.social .redes-sociais li a i:hover {
+    transition: 1s;
+    box-shadow: 1px 1px 10px #b60000;
 }
 
 .home .container-foto .foto-sombra-interno {
-    background: linear-gradient(to right, #2b34ef, #dee504, #00a659);
-    max-width: 500px;
+    background: linear-gradient(to right, #030014, #240086, #df0000, #130000);
+    max-width: 600px;
+    max-height: 700px;
     border-radius: 50%;
+    box-shadow: 0px 0px 25px rgba(0, 255, 255, 0.212);
+    filter: blur(15px);
+    filter: drop-shadow(15px 15px 15px rgba(0, 0, 0, 0.5));
     background-size: 180% 180%;
-    animation: gradient-animation 5s ease infinite;
+    animation: gradient-animation 7s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 55%;
+    }
+    50% {
+        background-position: 100% 55%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
 }
 
 .home .container-foto img {
     width: 100%;
+    max-height: 700px;
     border-radius: 50%;
 }
 
@@ -116,116 +178,70 @@ body {
     padding: 70px 0;
 }
 
-.projetos .titulo {
+.projetos h1.titulo {
     text-align: center;
     padding: 60px 0;
     font-size: 45px;
-    font-weight: 500;
+    font-weight: 700;
+    text-shadow: 1px 1px 10px #ff0000;
     text-transform: uppercase;
 }
 
-.projetos .container-projetos {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-    justify-content: center;
-}
-
-.container-projetos .projeto {
-    max-width: 300px;
-    max-height: 500px;
+.carousel {
     position: relative;
-    display: none;
-    z-index: 100;
-    transition: 0.6s;
-    transform-style: preserve-3d;
-}
-
-.container-projetos .projeto.ativo {
-    display: block;
-    background: rgba(0, 62, 74, 0.451);
-    box-shadow: 0 25px 45px rgba(0, 0, 9, 0.25);
-    max-width: 300px;
-    max-height: 500px;
-    border-radius: 25px;
-    border: 1px solid rgba(39, 39, 39, 0.152);
-}
-
-.projetos .projeto img {
-    height: 100%;
     width: 100%;
-    border-radius: 30px;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.projetos .projeto h3 {
-    background-color: rgba(0, 2, 9, 0.5); /* Corrigido para rgba */
-    padding-left: 10px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    position: absolute;
-    border-radius: 30px;
-    bottom: 0;
-}
-
-.projetos .projeto .informacoes-projeto {
-    background: rgba(255, 255, 255, 0.1);
-    position: absolute;
-    top: 0;
+.carousel img {
     width: 100%;
     height: 100%;
-    font-weight: 600;
-    opacity: 0;
-    transition: 0.3s;
-    padding: 20px;
+    object-fit:contain;
 }
-
-.projetos .container-projetos .projeto:hover .informacoes-projeto {
+.carousel .nav {
     position: absolute;
-    opacity: 0.9;
-    background: rgba(48, 60, 106, 0.543);
-    border-radius: 25px;
-    border: 1px solid rgba(0, 3, 41, 0.451);
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
-    max-width: 255px;
-    max-height: 455px;
-}
-
-.projetos .btn-mostrar-projetos {
-    background: none;
-    border: 1px solid #fff;
-    border-radius: 15px;
-    color: #fff;
-    width: 180px;
-    padding: 20px;
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+}
+.carousel .nav i {
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    width: 100%;
+}
+.carousel .indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+.carousel .indicators div {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border: 2px solid #000000c5;
+    border-radius: 50%;
     cursor: pointer;
 }
-
-.projetos .btn-mostrar-projetos:hover {
-    background-color: #9443d8;
-    transition: 0.3s;
+.carousel .indicators .active {
+    transition: 1s;
+    background-color: red;
+    box-shadow: 1px 1px 15px #ff4747;
 }
 
-.projetos .btn-mostrar-projetos.remover {
-    display: none;
-}
-
-@keyframes gradient-animation {
-    0% {
-        background-position: 0% 50%;
-    }
-  
-    50% {
-        background-position: 100% 50%;
-    }
-  
-    100% {
-        background-position: 0% 50%;
-    }
+footer p {
+    padding: 0 30px;
+    font-size: 16px;
+    width: 400;
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+    text-shadow: 1px 1px 15px #000;
 }

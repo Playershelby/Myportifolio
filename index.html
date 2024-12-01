@@ -8,7 +8,7 @@
     <title>Fernando JR Dev Front-end</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400;700&display=swap" >
     <link rel="stylesheet" href="src/CSS/reset.css">
     <link rel="stylesheet" href="src/CSS/Style.css">
     <link rel="stylesheet" href="src/CSS/responsivo.css">
@@ -27,22 +27,27 @@
     <main>
         <section class="home">
             <div class="informacoes">
-                <h1>Olá eu sou Fernando Junior.</h1>
-                <p>Desenvolvedor front-end, trabalho com HTML, CSS, JS. E nas horas vagas sou Gamer...</p>
-                <ul class="redes-sociais">
-                    <li><a href="https://www.linkedin.com/in/fernando-junior-1249b6266/" title="Ir para o LinkedIn" target="_blank">
-                        <i class="devicon-linkedin-plain"></i>
-                    </a></li>
-                    <li><a href="https://wa.me/79996068602" title="Enviar mensagem no WhatsApp" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                    </a></li>
-                    <li><a href="https://github.com" title="Ir para o GitHub" target="_blank">
-                        <i class="devicon-github-original"></i>
-                    </a></li>
-                    <li><a href="https://instagram.com" title="Ir para o Instagram" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a></li>
-                </ul>
+                <div class="info_animation">
+                    Eu <span></span>
+                </div>
+                <div class="social">
+                    <ul class="redes-sociais">
+                        <li>
+                            <a href="https://www.linkedin.com/in/fernando-junior-1249b6266/" title="Ir para o LinkedIn" target="_blank">
+                                <i class="devicon-linkedin-plain"></i>
+                            </a>
+                            <a href="https://wa.me/79996068602" title="Enviar mensagem no WhatsApp" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://github.com" title="Ir para o GitHub" target="_blank">
+                                <i class="devicon-github-original"></i>
+                            </a>
+                            <a href="https://instagram.com" title="Ir para o Instagram" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="container-foto">
                 <div class="foto-sombra-interno">
@@ -51,75 +56,33 @@
             </div>
         </section>
         <section class="projetos" id="projetos">
-            <h1 class="titulo">Meus Projetos</h1>
-            <div class="container-projetos">
-                <div class="projeto ativo">
-                    <a href="https://github.com" target="_blank">
-                        <img src="src/IMG/projeto-gta.png" alt="Projeto 1 - GTA">
-                        <h3>Projeto 1</h3>
-                        <div class="informacoes-projeto">
-                            <p>Projetos feitos usando HTML, CSS e JavaScript</p>
-                            <p>Ver no GitHub Pages</p>
-                        </div>
-                    </a>
+            <h1 class="titulo">Meus <span>Projetos</span></h1>
+            
+            <div class="carousel">
+                <img alt="Blurred road with 'Need for Speed Rivals' text overlay" height="800" src="/src/IMG/projeto-gta.png" width="580"/>
+                <img alt="Another image for the carousel" height="800" src="/src/IMG/projeto-one-piece.png" style="display:none;" width="580"/>
+                <img alt="Yet another image for the carousel" height="800" src="/src/IMG/projeto-x-men.png" style="display:none;" width="580"/>
+                <div class="nav">
+                    <i class="fas fa-chevron-left" id="prev">
+                    </i>
+                    <i class="fas fa-chevron-right" id="next">
+                    </i>
                 </div>
-                <div class="projeto ativo">
-                    <a href="https://github.com" target="_blank">
-                        <img src="src/IMG/projeto-x-men.png" alt="Projeto 2 - X-Men">
-                        <h3>Projeto 2</h3>
-                        <div class="informacoes-projeto">
-                            <p>Projetos feitos usando HTML, CSS e JavaScript</p>
-                            <p>Ver no GitHub Pages</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="projeto ativo">
-                    <a href="https://github.com" target="_blank">
-                        <img src="src/IMG/projeto-one-piece.png" alt="Projeto 3 - One Piece">
-                        <h3>Projeto 3</h3>
-                        <div class="informacoes-projeto">
-                            <p>Projetos feitos usando HTML, CSS e JavaScript</p>
-                            <p>Ver no GitHub Pages</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="projeto">
-                    <a href="https://github.com" target="_blank">
-                        <img src="https://via.placeholder.com/515x700" alt="Projeto Capa">
-                        <h3>Projeto</h3>
-                        <div class="informacoes-projeto">
-                            <p>Projetos feitos usando HTML, CSS e JavaScript</p>
-                            <p>Ver no GitHub Pages</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="projeto">
-                    <a href="https://github.com" target="_blank">
-                        <img src="https://via.placeholder.com/515x700" alt="Projeto Capa">
-                        <h3>Projeto</h3>
-                        <div class="informacoes-projeto">
-                            <p>Projetos feitos usando HTML, CSS e JavaScript</p>
-                            <p>Ver no GitHub Pages</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="projeto">
-                    <a href="https://github.com" target="_blank">
-                        <img src="https://via.placeholder.com/515x700" alt="Projeto Capa">
-                        <h3>Projeto</h3>
-                        <div class="informacoes-projeto">
-                            <p>Projetos feitos usando HTML, CSS e JavaScript</p>
-                            <p>Ver no GitHub Pages</p>
-                        </div>
-                    </a>
+                <div class="indicators">
+                    <div class="active" data-index="0">
+                    </div>
+                    <div data-index="1">
+                    </div>
+                    <div data-index="2">
+                    </div>
                 </div>
             </div>
-            <button class="btn-mostrar-projetos">Saiba Mais</button>
+ 
         </section>
     </main>
     <footer>
         <p>&copy; 2023 Fernando Junior. Todos os direitos reservados.</p>
     </footer>
-    <script src="index.js"></script>
+    <script src="/src/index.js"></script>
 </body>
 </html>

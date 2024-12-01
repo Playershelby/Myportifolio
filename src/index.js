@@ -1,18 +1,31 @@
-const botãoMostrarProjetos = document.querySelector('.btn-mostrar-projetos');
-const projetosInativos = document.querySelectorAll('.projeto:not(.ativo)');
+const images = document.querySelectorAll('.carousel img');
+const indicators = document.querySelectorAll('.carousel .indicators div');
+let currentIndex = 0;
 
-botãoMostrarProjetos.addEventListener('click', () => {
-    mostrarMaisProjetos();
-    esconderBotao();
-});
-
-function esconderBotao() {
-    botãoMostrarProjetos.classList.add('remover');
-    botãoMostrarProjetos.style.display = 'none'; // Esconde o botão
-}
-
-function mostrarMaisProjetos() {
-    projetosInativos.forEach(projetoInativo => {
-        projetoInativo.classList.add('ativo');
+function showImage(index) {
+    images.forEach((img, i) => {
+        img.style.display = i === index ? 'block' : 'none';
+    });
+    indicators.forEach((indicator, i) => {
+        indicator.classList.toggle('active', i === index);
     });
 }
+
+document.getElementById('prev').addEventListener('click', () => {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+    showImage(currentIndex);
+});
+
+document.getElementById('next').addEventListener('click', () => {
+    currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+    showImage(currentIndex);
+});
+
+indicators.forEach(indicator => {
+    indicator.addEventListener('click', () => {
+        currentIndex = parseInt(indicator.getAttribute('data-index'));
+        showImage(currentIndex);
+    });
+});
+
+showImage(currentIndex);
