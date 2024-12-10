@@ -1,115 +1,107 @@
 @media screen and (max-width: 2560px) {
-    .cabecalho{
-        padding: 30px;
-    }
-
-    .home{
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .home .informacoes{
-        max-width: 100%;
-        text-align: center;
-        align-items: center;
-    }
-
-    .container-foto{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .projetos .container-projetos{
-        padding: 0 30px;
-    }
-    .carousel .nav {
-        gap: 2080px;
-    }
-}
-
-@media screen and (max-width: 1400px) {
-    .cabecalho{
-        padding: 30px;
-    }
-
-    .home{
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .home .informacoes{
-        max-width: 100%;
-        text-align: center;
-        align-items: center;
-    }
-
-    .container-foto{
-        align-items: center;
-        justify-content: center;
-    }
-
-    .projetos .container-projetos{
-        padding: 0 30px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .home{
-        width: 100%;
-        flex-direction: column;
-    }
-    .home .informacoes{
-        margin: 30px 0;
-    }
-
-    .home .informacoes h1{
-        font-size: 30px;
-    }
-
-    .home .informacoes p{
-        font-size: 16px;
-    }
-
-    .home .container-foto img{
-        max-width: 320px;
-    }
-
-    .projetos{
-        padding: 30px;
-    }
-}
-
-@media (min-width: 1280px) {
-    .home{
-        flex-direction: row;
-    }
-}
-
-@media (max-width: 1920px) {
+    
     .cabecalho {
         padding: 30px;
     }
 
     .home {
-        flex-direction: row;
+        width: 100%;
+        flex-direction: column;
         align-items: center;
-        margin: 40px 0;
-        gap: 20px;
     }
 
     .home .informacoes {
-        max-width: 90%; 
-        text-align: left; /* Alinhamento à esquerda para telas maiores */
+        max-width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .home .container-foto .foto-sombra-interno{
+        margin-left: 90px;
+        margin-top: 300px;
+    }
+
+    .container-foto {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .projetos .container-projetos {
-        padding: 0 50px; /* Aumenta o padding lateral */
+        padding: 0 30px;
+    }
+
+    .carousel .nav {
+        gap: 2080px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .info_animation span::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        border-left: 2px solid #a10000;
+        right: -10px;
+        animation: cursor 1s infinite, digitar 20s steps(15) infinite;
+        width: calc(100% + 15px);
+        background-color: #000;
+    }
+
+    @keyframes text_animation {
+        0%, 25% {
+            content: "sou Dracula, o rei dos vampiros";
+        }
+        26%, 50% {
+            content: "sou desenvolvedor FullStack";
+        }
+        51%, 75% {
+            content: "sou desenvolvedor de jogos";
+        }
+        76%, 100% {
+            content: "tenho uma sede que é insaciável.";
+        }
+    }
+
+    .informacoes .info_animation {
+        font-size: 24px; /* Reduzido para telas menores */
+    }
+
+    .home {
+        gap: 20px; /* Reduzido para telas menores */
+    }
+
+    .home .informacoes {
+        margin-bottom: 30%; /* Ajustado para telas menores */
+        gap: 10px; /* Reduzido para telas menores */
+    }
+
+    .info_animation span::after {
+        width: calc(100% + 10px); /* Ajustado para telas menores */
+    }
+
+    @keyframes digitar {
+        10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+            width: 0;
+        }
+        5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%, 100% {
+            width: calc(100% + 10px); /* Ajustado para telas menores */
+        }
+    }
+
+    .home .container-foto img {
+        max-width: 320px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home .container-foto .foto-sombra-interno {
+        margin-left: 50px;
+        margin-top: 250px;
     }
 
     .projetos {
-        padding: 40px; /* Aumenta o padding geral */
+        padding: 40px;
     }
 }
